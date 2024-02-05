@@ -14,7 +14,7 @@ Es un exploit que nos permite instalar {TOR(The Onion Router)} en nuestra termin
 # MANIFESTACIÓN #
 ![17071428144484505722037891409511.png](https://github.com/Raiden010/TORVPN/assets/119252533/511a0a0a-e31d-48af-8294-a18781c0bd4b)
 # INTALACIÓN #
-git clone https://github.com/Darkmux/TORVPN
+git clone https://github.com/Raiden010/TORVPN-
 
 cd TORVPN
 
