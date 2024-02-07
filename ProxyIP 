@@ -1,0 +1,33 @@
+#! /bin/bash
+verde= ' \033[32m '
+blanco= ' \033[37m '
+rojo= ' \033[31m '
+TOR= $( curl --socks5-hostname localhost:9050 -s https://www.google.com > /dev/null ;  echo  $? )
+si [[ " $TOR "  -gt 0 ]] ;  entonces
+eco -e "${rojo}
+┌════════════════════════════┐
+█ ${blanco} ¡DESCONECTARSE A LA RED TOR! ${rojo}█
+└════════════════════════════┘
+${verde}
+┌════════════════════════════┐
+┌════════┐
+█ ${blanco} EJECUTA EL COMANDO ${verde} █=>█ ${blanco} TORVPN ${verde
+└════════════════════════════┘
+└════════┘
+" ${blanco}
+salida
+demás
+eco -e " ${verde}
+┌════════════════════════════┐
+█ ${verde} OBTENIENDO IP DEL PROXY... ${verde}█
+└════════════════════════════┘
+" ${blanco}
+proxychains4 curl ifconfig.so
+eco -e " " ${verde}
+eco -e " ⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆
+
+┌════════════════════════════┐
+█ ${blanco} IP DEL PROXY OBTENIDA ${verde} █
+└════════════════════════════┘
+" ${blanco}
+fi
