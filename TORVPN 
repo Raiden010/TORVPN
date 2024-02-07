@@ -1,0 +1,26 @@
+#!/bin/bash
+verde='\033[32m'
+blanco='\033[37'
+rojo='\033[31m'
+morado='\033[35m'
+trap ctrl_c 2
+fuction ctrl_c() {
+echo -e "${rojo}
+┌════════════════════════════┐
+█ ${blanco}DESCONECTADO DE LA RED DE TOR ${rojo}█
+└════════════════════════════┘
+"${blanco}
+}
+echo -e "${morado}
+${morado}████████╗ ██████╗ ██████╗   ${verde}██╗   ██╗██████╗ ███╗   ██╗
+${morado}╚══██╔══╝██╔═══██╗██╔══██╗  ${verde}██║   ██║██╔══██╗████╗  ██║
+${morado}   ██║   ██║   ██║██████╔╝  ${verde}██║   ██║██████╔╝██╔██╗ ██║
+${morado}   ██║   ██║   ██║██╔══██╗  ${verde}╚██╗ ██╔╝██╔═══╝ ██║╚██╗██║
+${morado}   ██║   ╚██████╔╝██║  ██║  ${verde} ╚████╔╝ ██║     ██║ ╚████║
+${morado}   ╚═╝    ╚═════╝ ╚═╝  ╚═╝  ${verde}  ╚═══╝  ╚═╝     ╚═╝  ╚═══╝"${blanco}
+echo -e "${verde}
+┌════════════════════════════┐
+█ ${blanco}CONECTANDO A LA RED DE TOR... ${verde}
+└════════════════════════════┘
+"${blanco}
+tor 
