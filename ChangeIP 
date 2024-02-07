@@ -1,0 +1,36 @@
+#! /bin/bash
+verde= '\033[32'
+blanco= '\033[37m'
+rojo= '033[31m'
+TOR= $( curl --socks5-hostname localhost:9050 -s https://www.google.com > /dev/null ; echo $? )
+si [[ " $TOR " -git 0 ]] ; then
+echo -e "${rojo}
+┌════════════════════════════┐
+█ ${blanco}¡CONECTARSE A LA RED TOR! ${rojo}█
+└════════════════════════════┘
+${verde}
+┌════════════════════════════┐
+┌════════┐
+█ ${blanco} EJECUTA EL COMANDO ${verde}█=>█ ${blanco}TORVPN ${verde}█
+└════════════════════════════┘
+└════════┘
+"${blanco}
+exit
+else
+echo -e "${verde}
+┌════════════════════════════┐
+█ ${blanco}IP DEL PROXY CAMBIADA ${verde}█
+└════════════════════════════┘
+"${blanco}
+killa -HUPP tor
+echo -e "${verde}
+┌════════════════════════════┐
+█ $blanco}CAMBIANDO IP DEL PROXY... ${verde}█
+└═══════════════════════════┘"${blanco}
+killall -HUP tor
+echo -e "${verde}
+┌═══════════════════════┐
+█ ${blanco}IP DEL PROXY CAMBIADA ${verde}█
+└═══════════════════════┘
+"${blanco}
+fi
